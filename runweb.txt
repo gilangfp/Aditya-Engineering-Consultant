@@ -1,0 +1,64 @@
+npm run dev
+php artisan migrate// run db
+php artisan serve --host 192.168.10.67 --port 8000
+npm run dev -- --host 192.168.10.67
+id_jenis=id
+id=id_departemen besok ubah itu
+
+
+
+
+
+yang mau ditampilkan apa data isi data dari tender apa
+
+
+					 @if (Auth::user()->id_level == 1)    <td> 
+                                                <a href="{{ url ('laporankegiatan/approve/'.$lk->id)}}">
+                                                <i class="material-icons">done</i>
+                                                </a>
+                                                <span class="pull-right">
+                                               <a href="{{ url ('laporankegiatan/approve/'.$lk->id)}}">
+                                                <i class="material-icons">done</i>
+                                                </a>
+                                                        @endif
+                                                    </form>
+                                                </span>
+                                            </td>
+
+
+
+
+
+mun hayang nambah
+mnh hayang ngelink na berarti ti views sidebar
+nyieun tender
+arahkeun /tender
+terus ka route jieun
+terus ka controller return na ka view
+terus jieun viewna
+
+
+no nama proyek kegiatan ruas start aksi
+
+upload file 70mb error
+
+
+asep@gmail.com
+asd12345
+
+
+
+
+					<th>dibuat</th>
+                                        @if (Auth::user()->id_level == 1)
+                                        <th>approve?</th>
+                                        @endif
+                                        <th>Dokumen</th>
+                                        {{--<th>Target</th> --}}
+                                        <th>Ubah</th>
+                                        @if (Auth::user()->id_level == 1)
+                                        <th>Hapus</th>
+                                        @endif
+
+
+<input type="submit" name="submit" value="Save">

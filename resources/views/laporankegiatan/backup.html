@@ -1,0 +1,58 @@
+{{-- old Table --}}
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            Data Laporan Kegiatan
+                        </h2>
+                    </div>
+                    <div class="body table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama Karyawan</th>
+                                    <th>Proyek</th>
+                                    <th>Kegiatan</th>
+                                    <th>Ruas</th>
+                                    <th>Start</th>
+                                    <th>Target</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($laporankegiatan as $lk)
+                                    <tr>
+                                        <th scope="row">{{ $loop->iteration }}</th>
+                                        {{-- <td>{{$lk->id }}</td> --}}
+                                        <td>{{ $lk->name }}</td>
+                                        <td>{{ $lk->nama_proyek }}</td>
+                                        <td>{{ $lk->kegiatan }}</td>
+                                        <td>{{ $lk->ruas }}</td>
+                                        <td>{{ $lk->start }}</td>
+                                        <td>{{ $lk->target }}</td>
+                                        <td>
+                                            <div class="d-flex justify-content-start">
+                                                <a href="/laporankegiatan/{{ $lk->id }}/ubah"
+                                                    class="btn btn-success">Ubah</a>
+                                                <span class="pull-right">
+                                                    <form action="/laporankegiatan/{{ $lk->id }}" method="post"
+                                                        onsubmit="return confirm('Apakah Anda yakin ingin menghapus data laporan kegiatan ini?')">
+                                                        @method('delete')
+                                                        @csrf
+                                                        <input class="btn btn-danger" type="submit" value="Hapus">
+                                                    </form>
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #END# Basic Table -->
+    </div>
